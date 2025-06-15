@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="present.css" />
+    <script src="present.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hành Trình 11 Ngày Tình Yêu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Hiệu ứng trái tim bay -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Lời chúc theo buổi (ban đầu hiển thị) -->
+    <div class="greeting-container" id="greetingContainer">
+      <p class="time-greeting" id="dailyGreeting"></p>
+    </div>
+
+    <!-- Phần bắt đầu hành trình -->
+    <div class="header" id="header">
+      <h1>
+        <i class="fas fa-heart heart-icon"></i> HÀNH TRÌNH YÊU THƯƠNG
+        <i class="fas fa-heart heart-icon"></i>
+      </h1>
+      <p>
+        Mỗi ngày mở một hộp quà để nhận lời nhắn yêu thương và hình ảnh đặc biệt
+        dành cho em
+      </p>
+
+      <div style="position: relative; z-index: 10;">
+      <button class="start-btn" id="startJourneyBtn">Bắt Đầu Hành Trình</button>
+      <p id="journeyInfo" style="margin-top: 15px; font-style: italic"></p>
+    </div>
+
+    <!-- Modal nhập mật khẩu -->
+    <div class="password-modal" id="passwordModal">
+      <div class="password-box">
+        <h3>Nhập Mật Khẩu Xem Trước</h3>
+        <input
+          type="password"
+          class="password-input"
+          id="passwordInput"
+          placeholder="Nhập mật khẩu..."
+        />
+        <p class="password-error" id="passwordError">Mật khẩu không đúng!</p>
+        <button class="password-btn" id="passwordSubmit">Xác Nhận</button>
+        <button class="password-btn" id="passwordCancel">Hủy Bỏ</button>
+      </div>
+    </div>
+
+    <!-- Phần hành trình 11 ngày (ban đầu ẩn) -->
+    <div class="calendar-container" id="calendarContainer" style="display: none;">
+      <div class="date-display" id="currentDate">
+        Ngày thứ 1 trong hành trình
+      </div>
+
+      <div class="gift-container">
+        <div class="gift-box" id="giftBox">
+          <div class="gift-front">
+            <div class="ribbon"></div>
+            <div class="bow">❤️</div>
+            <div class="day-number">1</div>
+          </div>
+          <div class="gift-back">
+            <!-- Nền hình ảnh -->
+            <div class="gift-image-fullscreen">
+              <img id="giftImage" src="" alt="Gift" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Vùng hiển thị tin nhắn bên dưới hộp quà -->
+        <div class="gift-message-container" id="giftMessageContainer">
+          <!-- ĐÃ XÓA LỜI CHÚC THEO BUỔI -->
+          <p class="gift-message" id="giftMessageText"></p>
+        </div>
+      </div>
+
+      <div class="days-container" id="daysContainer">
+        <!-- Các ngày sẽ được tạo bằng JavaScript -->
+      </div>
+    </div>
+
+    <div class="footer" id="footer" style="display: none;">
+      <p>Hành trình tình yêu | Bắt đầu từ 16 tháng 6</p>
+      <div class="counter">
+        <div class="counter-item">
+          <span class="counter-value" id="daysPassed">0</span>
+          <span>Ngày đã qua</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-value" id="daysLeft">12</span>
+          <span>Ngày còn lại</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-value" id="giftsOpened">0</span>
+          <span>Quà đã mở</span>
+        </div>
+      </div>
+      <p style="margin-top: 20px; font-weight: 500">
+        Được tạo với tất cả tình yêu <span class="heart-icon">❤️</span> dành cho
+        em
+      </p>
+    </div>
+  </body>
+</html>
